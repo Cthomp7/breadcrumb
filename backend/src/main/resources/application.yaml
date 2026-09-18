@@ -1,3 +1,19 @@
 spring:
   application:
-    name: backend
+    name: breadcrumb
+
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+breadcrumb:
+  ingest-api-key: ${INGEST_API_KEY:local-development-key}
